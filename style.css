@@ -1,0 +1,194 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #4CAF50;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #4CAF50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Game container */
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+/* Cards container grid layout */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);  /* 4 columns */
+    grid-gap: 15px;  /* Space between cards */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 120px;
+    height: 120px;
+    background-color: #3c8d99;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card.flipped {
+    background-color: #fff;
+    color: #3c8d99;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card:active {
+    transform: scale(1.05);
+    transform: rotateY(180deg);
+}
+
+/* Game info panel */
+#game-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+#game-info p {
+    font-weight: bold;
+    margin: 0;
+}
+
+#game-info span {
+    font-size: 1.5rem;
+    color: #4CAF50;
+}
+
+/* Timer and Moves styles */
+#timer, #move-counter {
+    color: #f44336;
+    font-size: 2rem;
+}
+
+/* Button */
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #388e3c;
+    transform: scale(1.02);
+}
+
+/* Victory Modal */
+.victory-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.victory-modal.active {
+    display: flex;
+}
+
+.victory-modal .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.victory-modal .modal-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.victory-modal .modal-content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.victory-modal .modal-content button {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.victory-modal .modal-content button:hover {
+    background-color: #d32f2f;
+}
+
+.victory-modal .modal-content button:active {
+    background-color: #c62828;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #cards-container {
+        grid-template-columns: repeat(3, 100px);  /* 3 columns on smaller screens */
+    }
+
+    .card {
+        width: 100px;
+        height: 100px;
+    }
+
+    #game-info {
+        flex-direction: column;
+    }
+
+    button {
+        width: 200px;
+    }
+}
